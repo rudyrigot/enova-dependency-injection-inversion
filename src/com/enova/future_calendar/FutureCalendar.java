@@ -1,7 +1,10 @@
 package com.enova.future_calendar;
+import java.io.FileNotFoundException;
+import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import com.enova.future_calendar.loggers.FileLogger;
 import com.enova.future_calendar.loggers.StdoutLogger;
 
 public class FutureCalendar {
@@ -30,11 +33,11 @@ public class FutureCalendar {
 		return cal;
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
 		SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
 		FutureCalendar futureCalendar = new FutureCalendar();
 
-		futureCalendar.setLogger(new StdoutLogger());
+		futureCalendar.setLogger(new FileLogger("/tmp/future_calendar.log", "utf-8"));
 
 		System.out.println(f.format(futureCalendar.getTomorrow().getTime()));
 		System.out.println(f.format(futureCalendar.getInAMonth().getTime()));
