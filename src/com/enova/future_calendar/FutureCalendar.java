@@ -2,13 +2,12 @@ package com.enova.future_calendar;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-import com.enova.loggers.ILogger;
-import com.enova.loggers.StdoutLogger;
+import com.enova.future_calendar.loggers.StdoutLogger;
 
 public class FutureCalendar {
 	
 	private Calendar cal;
-	private ILogger logger;
+	private IFutureCalendarLogger logger;
 	
 	public FutureCalendar() {
 		this.cal = Calendar.getInstance();

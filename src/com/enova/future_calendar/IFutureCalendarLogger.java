@@ -1,6 +1,6 @@
-package com.enova.loggers;
+package com.enova.future_calendar;
 
-public interface ILogger {
+public interface IFutureCalendarLogger {
 	
 	/**
 	 * Logs a string.
